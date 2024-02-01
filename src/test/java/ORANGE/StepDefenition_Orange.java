@@ -20,7 +20,8 @@ public class StepDefenition_Orange {
 
     @Before
     public void before(){
-        System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver.exe");
+//        Prasanna local driver removed
+//        System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver.exe");
         driver = DriverSetup_Orange.Getdriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -58,6 +59,7 @@ public class StepDefenition_Orange {
     @After
     public void after(Scenario scenario){
         scenario.log("STATUS: "+scenario.getStatus());
+        driver.quit();
     }
     @AfterStep
     public void afterstep(Scenario scenario){
